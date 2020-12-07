@@ -3,4 +3,5 @@
     <string name="login">Login</string>
     <string name="moodle_id">Enter Moodle ID</string>
     <string name="moodle_password">Enter Password</string>
+    <string name="profile">Profile</string>
 </resources>
