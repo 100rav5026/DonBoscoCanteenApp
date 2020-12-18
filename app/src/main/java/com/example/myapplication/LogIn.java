@@ -56,8 +56,17 @@ public class LogIn extends AppCompatActivity{
                     pass.requestFocus();
                     return;
                 }
-                func();
+                if(user.equals("admin") && pas.equals("admin")){
+                    Log.i("ddd", user);
+                    SharedPreferences.Editor editor = pref.edit();
+                    editor.putString("MoodleID",user);
+                    editor.commit();
 
+                    Intent i=new Intent(getApplicationContext(), navigationPage2.class);
+                    startActivity(i);
+                }else {
+                    func();
+                }
             }
         });
     }
@@ -81,6 +90,7 @@ public class LogIn extends AppCompatActivity{
                 SharedPreferences.Editor editor = pref.edit();
                 editor.putString("MoodleID",user);
                 editor.commit();
+
                 Intent i=new Intent(getApplicationContext(), navigationPage.class);
                 startActivity(i);
             }

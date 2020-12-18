@@ -15,6 +15,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -35,7 +36,7 @@ public class MenuFragment extends Fragment {
     RecyclerView recyclerView;
     private adapter CustomAdapter;
     private ArrayList<String> items1;
-
+    ItemTouchHelper.SimpleCallback itemTouchHelperCallback;
     TextView textView2, total1, totalCost;
     Spinner spinner1;
     Spinner spinner2;
@@ -85,10 +86,15 @@ public class MenuFragment extends Fragment {
                 String text3 = text1+"  Qty"+text2;
                 String text4 = text3.replaceAll("\\D+"," ").trim();
                 String[] splited = text4.split("\\s+");
-                int j = Integer.parseInt(splited[0])*Integer.parseInt(splited[1]);
-                totalCostint = totalCostint + j;
-                totalCost.setText("Total Cost is "+totalCostint.toString());
-                Log.i("text123456", String.valueOf(j));
+                try {
+                    int j = Integer.parseInt(splited[0])*Integer.parseInt(splited[1]);
+                    totalCostint = totalCostint + j;
+                    totalCost.setText("Total Cost is "+totalCostint.toString());
+                }catch (NumberFormatException e){
+                    Toast.makeText(getActivity(),"hehehe",Toast.LENGTH_SHORT).show();
+                }
+
+//                Log.i("text123456", String.valueOf(j));
                 Log.i("text1234567", String.valueOf(totalCostint));
 
                 Toast.makeText(getActivity().getApplicationContext(), text3, Toast.LENGTH_SHORT).show();
@@ -99,10 +105,34 @@ public class MenuFragment extends Fragment {
                 recyclerView = viewGroup.findViewById(R.id.recyclerView);
                 recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
                 CustomAdapter = new adapter(getContext(), items1);
+                try {
+                    new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
+                        @Override
+                        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                            return false;
+                        }
+
+                        @Override
+                        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                            items1.remove(viewHolder.getAdapterPosition());
+                            final View view = viewHolder.itemView;
+
+                            Log.i("hehehehehe", String.valueOf(view));
+                            int j = Integer.parseInt(splited[0])*Integer.parseInt(splited[1]);
+                            totalCostint = totalCostint - j;
+                            totalCost.setText("Total Cost is "+totalCostint.toString());
+                            CustomAdapter.notifyDataSetChanged();
+                        }
+                    }).attachToRecyclerView(recyclerView);
+                }catch (NullPointerException n){
+                    Toast.makeText(getActivity().getApplicationContext(), text3, Toast.LENGTH_SHORT).show();
+
+                }
                 recyclerView.setAdapter((RecyclerView.Adapter) CustomAdapter);
                 }
 
         });
+
 
         return  viewGroup;
     }
@@ -146,7 +176,6 @@ public class MenuFragment extends Fragment {
                     e.printStackTrace();
                     Log.i("name123", e.toString());
                 }
-
                 Toast.makeText(getActivity().getApplicationContext(),response,Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener() {

@@ -14,7 +14,7 @@ let db = new sqlite3.Database('./canteen.db', (err) => {
     return console.error(err.message);
   }
 });
-router.get('/',(req,res)=>{
+router.post('/',(req,res)=>{
     var item_name = req.body.item_name;                                                                                                                                                                                                               
     var price = req.body.price;
 

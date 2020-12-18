@@ -4,4 +4,7 @@
     <string name="moodle_id">Enter Moodle ID</string>
     <string name="moodle_password">Enter Password</string>
     <string name="profile">Profile</string>
+    <string name="enter_price">enter_price</string>
+    <string name="removebutton">removebutton</string>
+    <string name="remove">remove</string>
 </resources>

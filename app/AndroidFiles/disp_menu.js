@@ -15,18 +15,22 @@ let db = new sqlite3.Database('./canteen.db', (err) => {
   }
 });
 
-router.get('/',(req,res)=>{
+router.post('/',(req,res)=>{
 
-      db.all('Select * from menu', function(err,row) {
-        if(err)
-        { 
-          console.log(err);
-          res.sendStatus(400);
-        } 
-        else
-        console.log(row)
-        res.send(row);
-    });
-    
+       db.all('Select * from menu', function(err,rows) {  
+
+      rows.forEach(element=>{
+  console.log(element);
+      });
+
+      if(err)
+      {
+        res.sendStatus(400);
+      }
+      else
+      { 
+      res.send(rows);
+      }
+  });
 });
 module.exports=router;

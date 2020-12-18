@@ -81,8 +81,6 @@ public class ProfileFragment extends Fragment {
         btn_save = (ImageButton) viewGroup.findViewById(R.id.btn_save);
         edit_photo = (Button) viewGroup.findViewById(R.id.btn_photo);
         profile_image = (ImageView) viewGroup.findViewById(R.id.circle_image);
-        upload_photo = (Button) viewGroup.findViewById(R.id.btn_photo1);
-        square_image = (ImageView) viewGroup.findViewById(R.id.square_image);
         name.setEnabled(false);
         email.setEnabled(false);
         mnumber.setEnabled(false);
@@ -132,12 +130,12 @@ public class ProfileFragment extends Fragment {
                         openCamera();
                     } }
             });
-            upload_photo.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    uploadMultipart();
-                }
-            });
+//            upload_photo.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    uploadMultipart();
+//                }
+//            });
         return viewGroup;
 
     }
