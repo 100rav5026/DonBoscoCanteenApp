@@ -27,11 +27,12 @@ public class LogIn extends AppCompatActivity{
     Button btn;
     EditText id1,pass;
     String user,pas;
-    String server_url = "http://192.168.1.7:8080/login";
+    String server_url;
     SharedPreferences pref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        server_url = getString(R.string.url)+"/login";
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 

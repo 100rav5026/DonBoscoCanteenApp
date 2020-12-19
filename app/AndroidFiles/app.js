@@ -12,8 +12,8 @@ app.use(bodyParser.urlencoded({
 var login = require('./login');
 app.use('/login',login);
 
-//var view = require('./view');
-//app.use('/view',view);
+var placeddb = require('./placeddb');
+app.use('/placeddb',placeddb);
 
 var pic = require('./pic');
 app.use('/pic',pic);
@@ -24,6 +24,8 @@ app.use('/profile',profile);
 var disp_profile = require('./disp_profile');
 app.use('/disp_profile',disp_profile);
 
+var pic = require('./pic');
+app.use('/pic',pic);
 
 var add_menu = require('./add_menu');
 app.use('/add_menu',add_menu);

@@ -16,8 +16,7 @@ let db = new sqlite3.Database('./canteen.db', (err) => {
 });
 router.post('/',(req,res)=>{
     var item_name = req.body.item_name;                                                                                                                                                                                                               
-    var price = req.body.price;
-
+    console.log(item_name);
     db.get('Delete from menu where item_name=(?)', [item_name], function(err,row) {
       if(err)
       {

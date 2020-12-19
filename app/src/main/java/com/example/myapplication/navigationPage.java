@@ -34,9 +34,6 @@ public class navigationPage extends AppCompatActivity {
                 case R.id.menu:
                     selectedFragment = new MenuFragment();
                     break;
-                case R.id.cart:
-                    selectedFragment = new CartFragment();
-                    break;
                 case R.id.logout:
                     selectedFragment = new LogoutFragment();
                     break;

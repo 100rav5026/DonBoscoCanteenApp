@@ -48,9 +48,7 @@ public class AddItems extends Fragment{
     Button add,remove;
     EditText itemname,itemprice;
     String item,price;
-    String server_url_add = "http://192.168.1.7:8080/add_menu";
-    String server_url_remove = "http://192.168.1.7:8080/remove_menu";
-    String server_url_display = "http://192.168.1.7:8080/disp_menu";
+    String server_url_add, server_url_remove, server_url_display ;
     public Spinner spinner;
     public String removing_this_item;
     int[] integerflag={0};
@@ -62,6 +60,10 @@ public class AddItems extends Fragment{
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        server_url_add = getString(R.string.url)+"/add_menu";
+        server_url_remove = getString(R.string.url)+"/remove_menu";
+        server_url_display = getString(R.string.url)+"/disp_menu";
+
         ViewGroup viewGroup = (ViewGroup)  inflater.inflate(R.layout.additems,container,false);
         pref = getActivity().getSharedPreferences("user_details", Context.MODE_PRIVATE);
         Toast.makeText(getActivity().getApplicationContext(), pref.getString("MoodleID",null), Toast.LENGTH_LONG).show();
@@ -188,7 +190,7 @@ public class AddItems extends Fragment{
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.i("volleyerror123",error.toString());
-                Toast.makeText(getActivity().getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity().getApplicationContext(), (CharSequence) error , Toast.LENGTH_SHORT).show();
             }
         })
 

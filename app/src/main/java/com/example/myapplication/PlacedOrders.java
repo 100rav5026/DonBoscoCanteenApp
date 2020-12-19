@@ -46,12 +46,13 @@ public class PlacedOrders extends Fragment{
     SharedPreferences pref;
     ConstraintLayout constraintLayout;
     RecyclerView recyclerView;
-    private adapter Customadapter;
+    private adapter2 Customadapter;
     private ArrayList<String> item_details;
-    String server_url_display = "http://192.168.1.7:8080/placed_orders";
+    String server_url_display;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        server_url_display = getString(R.string.url)+"/placed_orders";
         pref = getActivity().getSharedPreferences("user_details", Context.MODE_PRIVATE);
         ViewGroup viewGroup = (ViewGroup)  inflater.inflate(R.layout.placedorders,container,false);
         Toast.makeText(getActivity().getApplicationContext(), pref.getString("MoodleID",null), Toast.LENGTH_LONG).show();
@@ -84,9 +85,9 @@ public class PlacedOrders extends Fragment{
                         Log.i("All_details",All);
                         item_details.add(All);
                         Log.i("itemdetail123",item_details.toString());
-                        recyclerView = recyclerView.findViewById(R.id.recyclerview);
+                        recyclerView = getActivity().findViewById(R.id.recyclerview);
                         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
-                        Customadapter = new adapter(getActivity().getApplicationContext(), item_details);
+                        Customadapter = new adapter2(getActivity().getApplicationContext(), item_details);
                     }
                     recyclerView.setAdapter(Customadapter);
 

@@ -5,45 +5,49 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/dbitcanteen">
-   <Spinner
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:id="@+id/spinner1"
-       android:scrollbars="vertical"
-       android:background="@android:drawable/btn_dropdown"
-       android:layout_marginTop="50dp"
-       android:textColor="@color/white"
-       android:popupBackground="@color/white"
-       android:backgroundTint="@color/material_on_background_disabled"/>
 
-    <Spinner
-        android:id="@+id/spinner2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:textColor="@color/white"
-        android:popupBackground="@color/white"
-        android:backgroundTint="@color/material_on_background_disabled"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginRight="2dp"
-        android:background="@android:drawable/btn_dropdown"
-        android:scrollbars="vertical" />
+ <Spinner
+     android:id="@+id/spinner1"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_alignParentTop="true"
+     android:layout_marginTop="30dp"
+     android:background="@android:drawable/btn_dropdown"
+     android:backgroundTint="@color/cardview_dark_background"
+     android:scrollbars="vertical"
+     android:textColor="@color/white" />
 
-    <Button
-        android:id="@+id/addbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="170dp"
-        android:layout_marginRight="170dp"
-        android:layout_marginBottom="575dp"
-        android:text="Add" />
+ <Spinner
+     android:id="@+id/spinner2"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_alignParentTop="true"
+     android:layout_alignParentEnd="true"
+     android:layout_alignParentRight="true"
+     android:layout_marginTop="34dp"
+     android:layout_marginEnd="3dp"
+     android:layout_marginRight="3dp"
+     android:background="@android:drawable/btn_dropdown"
+     android:backgroundTint="@color/cardview_dark_background"
+     android:scrollbars="vertical"
+     android:textColor="@color/white" />
 
-    <androidx.recyclerview.widget.RecyclerView
+ <Button
+     android:id="@+id/addbtn"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_alignParentEnd="true"
+     android:layout_alignParentRight="true"
+     android:layout_alignParentBottom="true"
+     android:layout_marginTop="120dp"
+     android:layout_marginEnd="148dp"
+     android:layout_marginRight="148dp"
+     android:layout_marginBottom="569dp"
+     android:background="@color/cardview_dark_background"
+     android:text="Add"
+     android:textColor="@color/white" />
+
+ <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="300dp"
@@ -51,28 +55,48 @@
         android:paddingLeft="20dp"
         android:scrollbars="vertical"/>
 
-    <TextView
-        android:id="@+id/totalCost"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="191dp"
-        android:layout_marginRight="191dp"
-        android:layout_marginBottom="177dp"
-        android:text="Total Cost" />
+ <TextView
+     android:id="@+id/totalCost"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_alignParentEnd="true"
+     android:layout_alignParentRight="true"
+     android:layout_alignParentBottom="true"
+     android:layout_centerHorizontal="true"
+     android:layout_marginEnd="167dp"
+     android:layout_marginRight="167dp"
+     android:layout_marginBottom="171dp"
+     android:text="Total Cost"
+     android:textColor="@color/white" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/recyclerView"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="121dp"
-        android:layout_marginEnd="148dp"
-        android:layout_marginRight="148dp"
-        android:layout_marginBottom="42dp"
-        android:text="Place Order" />
+ <Button
+     android:id="@+id/placedorder"
+     android:layout_width="150dp"
+     android:layout_height="70dp"
+     android:layout_below="@+id/recyclerView"
+     android:layout_marginTop="120dp"
+     android:layout_centerHorizontal="true"
+     android:background="@color/cardview_dark_background"
+     android:text="Place Order"
+     android:textColor="@color/white" />
+
+ <Spinner
+     android:id="@+id/spinner3"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_alignParentStart="true"
+     android:layout_alignParentLeft="true"
+     android:layout_alignParentEnd="true"
+     android:layout_alignParentRight="true"
+     android:layout_alignParentBottom="true"
+     android:layout_marginStart="7dp"
+     android:layout_marginLeft="7dp"
+     android:layout_marginTop="50dp"
+     android:layout_marginEnd="284dp"
+     android:layout_marginRight="284dp"
+     android:layout_marginBottom="571dp"
+     android:background="@android:drawable/btn_dropdown"
+     android:backgroundTint="@color/cardview_dark_background"
+     android:scrollbars="vertical"
+     android:textColor="@color/white" />
 </RelativeLayout>

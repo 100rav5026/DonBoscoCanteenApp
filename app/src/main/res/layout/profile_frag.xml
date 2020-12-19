@@ -3,18 +3,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/dbitcanteen"
-    >
+    android:background="@drawable/dbitcanteen">
+
     <TextView
         android:id="@+id/profiletext"
         android:textSize="40sp"
         android:gravity="center"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="10dp"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:text="@string/profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
     <ImageButton
         android:id="@+id/btn_edit"
         android:layout_width="wrap_content"
@@ -82,12 +83,8 @@
         android:layout_width="70dp"
         android:layout_height="50dp"
         app:srcCompat="@drawable/ic_name"
-        android:textColor="@color/white"
-        android:textColorHint="@color/cardview_light_background"
-        android:background="@color/white"
         android:backgroundTint="@color/material_on_background_disabled"
-        android:drawableLeft="@drawable/ic_baseline_food_bank"
-        android:drawableTint="@color/cardview_light_background"/>
+        app:tint="@color/white" />
 
     <EditText
         android:layout_width="250dp"
@@ -99,11 +96,7 @@
         android:inputType="textPersonName"
         android:textColor="@color/white"
         android:textColorHint="@color/cardview_light_background"
-        android:background="@color/white"
-        android:backgroundTint="@color/material_on_background_disabled"
-        android:drawableLeft="@drawable/ic_baseline_food_bank"
-        android:drawableTint="@color/cardview_light_background"
-        />
+        android:backgroundTint="@color/material_on_background_disabled" />
 
 </LinearLayout>
     <LinearLayout
@@ -121,12 +114,9 @@
             android:layout_width="70dp"
             android:layout_height="50dp"
             app:srcCompat="@drawable/ic_email"
-            android:textColor="@color/white"
-            android:textColorHint="@color/cardview_light_background"
-            android:background="@color/white"
             android:backgroundTint="@color/material_on_background_disabled"
             android:drawableLeft="@drawable/ic_baseline_food_bank"
-            android:drawableTint="@color/cardview_light_background"/>
+            app:tint="@color/white"/>
 
         <EditText
             android:layout_width="250dp"
@@ -138,11 +128,7 @@
             android:inputType="textEmailAddress"
             android:textColor="@color/white"
             android:textColorHint="@color/cardview_light_background"
-            android:background="@color/white"
-            android:backgroundTint="@color/material_on_background_disabled"
-            android:drawableLeft="@drawable/ic_baseline_food_bank"
-            android:drawableTint="@color/cardview_light_background"
-            />
+            android:backgroundTint="@color/material_on_background_disabled"/>
 
     </LinearLayout>
     <LinearLayout
@@ -160,12 +146,9 @@
             android:layout_width="70dp"
             android:layout_height="50dp"
             app:srcCompat="@drawable/ic_mobilenum"
-            android:textColor="@color/white"
-            android:textColorHint="@color/cardview_light_background"
-            android:background="@color/white"
+            app:tint="@color/white"
             android:backgroundTint="@color/material_on_background_disabled"
-            android:drawableLeft="@drawable/ic_baseline_food_bank"
-            android:drawableTint="@color/cardview_light_background"/>
+            android:drawableLeft="@drawable/ic_baseline_food_bank" />
 
         <EditText
             android:layout_width="250dp"
@@ -177,10 +160,8 @@
             android:inputType="number"
             android:textColor="@color/white"
             android:textColorHint="@color/cardview_light_background"
-            android:background="@color/white"
             android:backgroundTint="@color/material_on_background_disabled"
-            android:drawableLeft="@drawable/ic_baseline_food_bank"
-            android:drawableTint="@color/cardview_light_background"/>
+            />
 
     </LinearLayout>
 

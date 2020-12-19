@@ -40,6 +40,7 @@ public class adapter2 extends RecyclerView.Adapter<adapter2.adapterViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull adapter2.adapterViewHolder holder, int position) {
         String title = data.get(position);
+        Log.i("tittlelel", title);
         String[] splited = title.split("\\s+");
         Log.i("itemname", splited[0]);
         Log.i("plates", splited[1]);

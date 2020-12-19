@@ -7,4 +7,5 @@
     <string name="enter_price">enter_price</string>
     <string name="removebutton">removebutton</string>
     <string name="remove">remove</string>
+    <string name="url">http://192.168.1.3:8080</string>
 </resources>
