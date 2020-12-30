@@ -32,9 +32,13 @@ public class LogoutFragment extends Fragment {
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(getActivity(), "Yes button pressed", Toast.LENGTH_SHORT).show();
-                        SharedPreferences.Editor editor = prf.edit();
-                        editor.clear();
-                        editor.commit();
+                        try{
+                            SharedPreferences.Editor editor = prf.edit();
+                            editor.clear();
+                            editor.commit();
+                        }catch (NullPointerException g){
+                            Toast.makeText(getActivity(), "LoggedOut", Toast.LENGTH_SHORT).show();
+                        }
 //                        startActivity(intent);
                     }
                 })

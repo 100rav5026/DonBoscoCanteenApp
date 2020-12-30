@@ -239,7 +239,7 @@ public class ProfileFragment extends Fragment {
                     Log.i("name123", response.toString());
                     String email1 = jsonObject1.getString("email");
                     String mnumber1 = jsonObject1.getString("phone");
-                    String array = jsonObject1.getString("image1");
+                    String array = jsonObject1.getString("image");
 
                     name.setText(name1);
                     email.setText(email1);

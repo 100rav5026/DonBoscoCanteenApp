@@ -39,7 +39,7 @@ router.post('/', (req, res, next) => {
         require("fs").writeFile(locationImg,temp,'base64',function(err){
             console.log(err);
         });
-        db.run("Update profile set image1=(?) where id=(?)",[imgLoc, user_id], function (err, result) {
+        db.run("Update profile set image=(?) where id=(?)",[imgLoc, user_id], function (err, result) {
         if(err)
         { console.log(err);
           res.status(400).send({ "error": "Username or Password is incorrect" });

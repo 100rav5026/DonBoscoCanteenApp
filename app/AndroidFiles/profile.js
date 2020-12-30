@@ -26,7 +26,7 @@ router.post('/',(req,res)=>{
     console.log(email)
     console.log(phone)
 
-      db.run('Update profile set name = (?),email=(?),phone=(?), image1=(?) where id =(?)',[name,email,phone,array,id], function(err,row) {
+      db.run('Update profile set name = (?),email=(?),phone=(?), image=(?) where id =(?)',[name,email,phone,array,id], function(err,row) {
         if(err)
         { console.log(err);
           res.sendStatus(400);

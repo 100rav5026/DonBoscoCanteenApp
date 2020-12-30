@@ -64,7 +64,7 @@ public class MenuFragment extends Fragment {
         totalCostint = 0;
         String[] time = new String[]{"Select Time", "9", "10", "11", "12", "13", "14", "15", "16", "17"};
         final ArrayAdapter<String> spinnerArrayAdapter1 = new ArrayAdapter<String>(
-                getActivity(),R.layout.spinner,time){
+                getActivity(),R.layout.custom_spinner_dropdown_items,time){
             @Override
             public boolean isEnabled(int position){
                 if(position == 0) { return false; }
@@ -79,13 +79,13 @@ public class MenuFragment extends Fragment {
                 return view;
             }
         };
-        spinnerArrayAdapter1.setDropDownViewResource(R.layout.spinner);
-        spinner3.setAdapter(spinnerArrayAdapter1);
         spinnerArrayAdapter1.setDropDownViewResource(R.layout.custom_spinner_dropdown_items);
+        spinner3.setAdapter(spinnerArrayAdapter1);
+//        spinnerArrayAdapter1.setDropDownViewResource(R.layout.custom_spinner_dropdown_items);
 
         String[] items = new String[]{"Select Quantity", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
         final ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(
-                getActivity(),R.layout.spinner,items){
+                getActivity(),R.layout.custom_spinner_dropdown_items,items){
             @Override
             public boolean isEnabled(int position){
                 if(position == 0) { return false; }
@@ -100,7 +100,7 @@ public class MenuFragment extends Fragment {
                 return view;
             }
         };
-        spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner);
+        spinnerArrayAdapter.setDropDownViewResource(R.layout.custom_spinner_dropdown_items);
         spinner2.setAdapter(spinnerArrayAdapter);
         GetDetails();
         itemsSelected = new ArrayList<>();
@@ -239,7 +239,7 @@ public class MenuFragment extends Fragment {
                     ArrayList<String> itemsList =new ArrayList<>();
                     itemsList.add("Select Item");
                     final ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(
-                            getActivity(),R.layout.spinner,itemsList){
+                            getActivity(),R.layout.custom_spinner_dropdown_items,itemsList){
                         @Override
                         public boolean isEnabled(int position){
                             if(position == 0) { return false;}
@@ -252,7 +252,7 @@ public class MenuFragment extends Fragment {
                             if(position == 0){ tv.setTextColor(Color.GRAY); }
                             else { tv.setTextColor(Color.BLACK); }
                             return view; }};
-                    spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner);
+                    spinnerArrayAdapter.setDropDownViewResource(R.layout.custom_spinner_dropdown_items);
                     spinner1.setAdapter(spinnerArrayAdapter);
 
                     JSONArray jsonArray = new JSONArray(response);
